@@ -1,0 +1,16 @@
+<hr>
+<h2>{{ category.name }}</h2>
+<p>{{ category.description }}</p>
+<hr>
+
+<ul>
+    {% for item in items %}
+        <li>
+            <a href="/catalog/{{ item.category.slug }}/{{ item.slug }}">{{ item.name }}</a>
+        </li>
+    {% else %}
+        <li>Предметов в этой категории пока нет.</li>
+    {% endfor %}
+</ul>
+
+{{ items.render|raw }}

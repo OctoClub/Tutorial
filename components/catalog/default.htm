@@ -1,0 +1,19 @@
+<ul>
+    {% for category in categories %}
+        <li>
+            <a href="/catalog/{{ category.slug }}">{{ category.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<hr>
+
+<ul>
+    {% for item in items %}
+        <li>
+            <a href="/catalog/{{ item.category.slug }}/{{ item.slug }}">{{ item.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+{{ items.render|raw }}

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Category
+
+# Model Form Field configuration
+form: $/octoclub/tutorial/models/category/fields.yaml
+
+# Model Class name
+modelClass: OctoClub\Tutorial\Models\Category
+
+# Default redirect location
+defaultRedirect: octoclub/tutorial/categories
+
+# Create page
+create:
+    title: Create Category
+    redirect: octoclub/tutorial/categories/update/:id
+    redirectClose: octoclub/tutorial/categories
+
+# Update page
+update:
+    title: Edit Category
+    redirect: octoclub/tutorial/categories
+    redirectClose: octoclub/tutorial/categories
+
+# Preview page
+preview:
+    title: Preview Category

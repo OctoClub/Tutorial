@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Item
+
+# Model Form Field configuration
+form: $/octoclub/tutorial/models/item/fields.yaml
+
+# Model Class name
+modelClass: OctoClub\Tutorial\Models\Item
+
+# Default redirect location
+defaultRedirect: octoclub/tutorial/items
+
+# Create page
+create:
+    title: Create Item
+    redirect: octoclub/tutorial/items/update/:id
+    redirectClose: octoclub/tutorial/items
+
+# Update page
+update:
+    title: Edit Item
+    redirect: octoclub/tutorial/items
+    redirectClose: octoclub/tutorial/items
+
+# Preview page
+preview:
+    title: Preview Item

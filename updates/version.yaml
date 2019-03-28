@@ -1,0 +1,7 @@
+1.0.4:
+    - Migrations
+    - create_categories_table.php
+1.0.3:
+    - Migrations
+    - create_items_table.php
+1.0.1: First version of Tutorial
