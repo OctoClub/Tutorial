@@ -31,31 +31,35 @@ class Feedback extends ComponentBase
     {
         // Проверка
         if(!Input::has('name')){
-            Flash::error('Вы должны указать свое имя');
-            return;
+            throw new AjaxException([ 'X_OCTOBER_ERROR_MESSAGE' => 'Вы должны указать свое имя' ]);
         }
-    
+
         if(!Input::has('email')){
-            Flash::error('Вы должны указать email для связи');
-            return;
+            throw new AjaxException([ 'X_OCTOBER_ERROR_MESSAGE' => 'Вы должны указать email для связи' ]);
         }
-    
+
         // Составление массива
         $data = [
             'name'       => e(Input::get('name')),
             'email'      => e(Input::get('email')),
             'item_name'  => e(Input::get('item_name')),
         ];
-    
+
         if(Input::has('phone')){
             $data['phone'] = e(Input::get('phone'));
         }
-    
+
         // Отправка уведомления
         $email = $this->property('email');
         Mail::send('octoclub.tutorial::mail.feedback', $data, function($message) use ($email) {
             $message->to($email, 'Admin Person');
         });
-        Flash::success('Форма успешно отправлена.');
+        
+        // Проверка успешно ли ушло письмо
+        if (count(Mail::failures()) == 0){
+            Flash::success( 'Форма успешно отправлена!' );
+        } else {
+            throw new AjaxException([ 'X_OCTOBER_ERROR_MESSAGE' => 'Произошла ошибка, попробуйте позже' ])
+        }
     }
 }
