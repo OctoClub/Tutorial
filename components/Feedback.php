@@ -59,7 +59,7 @@ class Feedback extends ComponentBase
         if (count(Mail::failures()) == 0){
             Flash::success( 'Форма успешно отправлена!' );
         } else {
-            throw new AjaxException([ 'X_OCTOBER_ERROR_MESSAGE' => 'Произошла ошибка, попробуйте позже' ])
+            throw new AjaxException([ 'X_OCTOBER_ERROR_MESSAGE' => 'Произошла ошибка, попробуйте позже' ]);
         }
     }
 }
