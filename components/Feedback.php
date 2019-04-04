@@ -45,7 +45,7 @@ class Feedback extends ComponentBase
             'item_name'  => e(Input::get('item_name')),
         ];
     
-        if(Input::has('phone')){
+        if(Input::has('phone') && !empty(Input::get('phone'))){
             $data['phone'] = e(Input::get('phone'));
         }
     
