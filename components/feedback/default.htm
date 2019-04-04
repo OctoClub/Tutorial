@@ -1,0 +1,19 @@
+<form 
+    data-request="{{ __SELF__ }}::onSend" 
+    data-request-success="$(this).find('input[type=text], input[type=email]').val('');"
+    data-request-flash>
+    <div class="form-group">
+        <label for="name">Имя</label>
+        <input type="text" name="name" id="name" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="phone">Телефон</label>
+        <input type="text" name="phone" id="phone" class="form-control" required>
+    </div>
+    <input type="hidden" name="item_name" value="{{ item.name }}">
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>

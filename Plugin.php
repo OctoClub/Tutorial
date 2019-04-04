@@ -53,7 +53,8 @@ class Plugin extends PluginBase
         return [
             'OctoClub\Tutorial\Components\Catalog'  => 'OctoClubCatalog',
             'OctoClub\Tutorial\Components\Category' => 'OctoClubCategory',
-            'OctoClub\Tutorial\Components\Item'     => 'OctoClubCategory',
+            'OctoClub\Tutorial\Components\Item'     => 'OctoClubItem',
+            'OctoClub\Tutorial\Components\Feedback' => 'OctoClubFeedback',
         ];
     }
 
